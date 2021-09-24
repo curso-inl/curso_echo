@@ -24,6 +24,8 @@ class accion_patrulla implements ShouldBroadcast
     {
         //
         $this->mensaje = $txt;
+        //Para que no me notifique a mi mismo
+        $this->dontBroadcastToCurrentUser();
     }
 
     /**
