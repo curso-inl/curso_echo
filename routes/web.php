@@ -1,5 +1,6 @@
 <?php
 
+use App\Events\accion_patrulla;
 use App\Http\Controllers\comisariaController;
 use Illuminate\Support\Facades\Route;
 
@@ -29,3 +30,8 @@ Route::get('comisaria/{comisaria}',[ comisariaController::class,'show' ])->middl
 
 
 Route::post('patrulla/new',[comisariaController::class,'nuevo_mensaje'])->middleware(['auth'])->name('nuevo_mensaje');
+
+Route::get('dispara', function () {
+    accion_patrulla::dispatch('Con algún mensaje');
+    ddd("Pum!");
+});

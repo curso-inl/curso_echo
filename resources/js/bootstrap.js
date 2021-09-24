@@ -29,9 +29,11 @@ window.Echo = new Echo({
 });
 
 
-window.Echo.channel('novedades').listen('boletaCambiada', e => {
-    alert('nueva boleta: '+e.boleta.tipo);
-})
+// window.Echo.channel('novedades').listen('boletaCambiada', e => {
+//     alert('nueva boleta: '+e.boleta.tipo);
+// })
+
+
 
 
 

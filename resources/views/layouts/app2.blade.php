@@ -25,7 +25,9 @@
             <!-- Page Heading -->
             <header class="bg-white shadow">
                 <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
+
                     @yield('encabezado')
+
                 </div>
             </header>
 
@@ -35,6 +37,27 @@
                 @yield('contenido')
             </main>
         </div>
+
         @stack('js')
+
+        <script>
+
+            window.onload = function() {
+                window.Echo.channel('patrulla-{{ \Auth::user()->id_comisaria }}')
+                .listen('accion_patrulla', e => {
+                    //alert(e.mensaje.accion_patrulla);
+                    console.log('incoming...');
+
+                    window.dispatchEvent(new CustomEvent('items-load',{ detail:e.mensaje}));
+                })
+            };
+
+
+
+
+
+        </script>
+
+
     </body>
 </html>
