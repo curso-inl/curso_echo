@@ -29,6 +29,7 @@
 
 
                     <h2>Con Alpine</h2>
+                    <!-- escuchar el evento para actualizar la lista -->
                 <section x-data="para_alpine(lista_mensajes)" x-on:items-load.window=" items.push($event.detail)">
 
                     <ol class='list-decimal'  >
@@ -79,7 +80,7 @@
 
 
 
-            //evento para actualizar el componenete
+            //evento de prueba para actualizar el componenete
             let evento = new CustomEvent("items-load", {
                 detail : {
                     accion_patrulla:'Accion de la patrulla',

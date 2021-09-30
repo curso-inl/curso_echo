@@ -48,7 +48,8 @@
                     //alert(e.mensaje.accion_patrulla);
                     console.log('incoming...');
 
-                    window.dispatchEvent(new CustomEvent('items-load',{ detail:e.mensaje}));
+                    //Despachar evento con la información
+                    window.dispatchEvent(new CustomEvent('items-load',{ detail:   e.mensaje}));
                 })
             };
 
